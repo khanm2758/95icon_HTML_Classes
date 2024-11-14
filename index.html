@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 50%;
+            margin: 0 auto;
+            border-right: 1px solid gray;
+            border-left: 1px solid gray;
+            padding: 30px;
+            font-size: 20px;
+        }
+        h4{
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <hgroup style="text-align: center;">
+            <h1>Semantic Elements in HTML</h1>
+            <h2>Content sectioning tag</h2>
+        </hgroup>
+    </header>
+    
+<header>
+    <hgroup>
+        <h3>Header tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Article Header</p>
+            <xmp>
+                <article>
+                    <header>
+                      <h2>The Planet Earth</h2>
+                      <p>
+                        Posted on Wednesday, 
+                        <time datetime="2017-10-04">4 October 2017</time> 
+                        by Jane Smith
+                      </p>
+                    </header>
+                    <p>
+                      We live on a planet that's blue and green, with 
+                      so many things still unseen.
+                    </p>
+                    <p><a href="#">Continue reading…</a></p>
+                  </article>
+            </xmp>
+             <p style="text-align: center;">Page Header</p>
+            <xmp>
+                <header>
+                    <h1>Main Page Title</h1>
+                    <img src="mdn-logo-sm.png" alt="MDN logo" />
+                </header>
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark:</strong> The &lt;header&gt; element has an identical meaning to the site-wide banner landmark role, unless nested within sectioning content. Then, the &lt;header&gt; element is not a landmark.
+
+        The &lt;header&gt; element can define a global site header, described as a banner in the accessibility tree. It usually includes a logo, company name, search feature, and possibly the global navigation or a slogan. It is generally located at the top of the page.
+        
+        Otherwise, it is a section in the accessibility tree, and usually contains the surrounding section's heading (an h1 – h6 element) and optional subheading, but this is not required.</p>
+    </hgroup>
+</header>  
+<hr>
+
+<nav>
+    <hgroup>
+        <h3>Nav tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Navigation Menu</p>
+            <xmp>
+                <nav class="menu">
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </nav>
+            </xmp>
+            <p style="text-align: center;">Navigation Block</p>
+            <xmp>
+                <nav>
+                    <h2>Navigation</h2>
+                    <p>
+                      You are on my home page. To the north lies 
+                      <a href="/blog">my blog</a>, from
+                      whence the sounds of battle can be heard. 
+                      To the east you can see a large
+                      mountain, upon which many 
+                      <a href="/school">school papers</a> are littered.
+                      Far up this mountain you can spy a little
+                       figure who appears to be me,
+                      desperately scribbling a 
+                      <a href="/school/thesis">thesis</a>.
+                    </p>
+                    <p>
+                      To the west are several exits. One fun-looking 
+                      exit is labeled
+                      <a href="https://games.example.com/">"games"</a>.
+                       Another more
+                      boring-looking exit is labeled 
+                      <a href="https://isp.example.net/">ISP™</a>.
+                    </p>
+                    <p>
+                      To the south lies a dark and dank
+                       <a href="/about">contacts page</a>.
+                      Cobwebs cover its disused entrance, 
+                      and at one point you see a rat run
+                      quickly out of the page.
+                    </p>
+                  </nav>
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>It's not necessary for all links to be contained in a <strong>&lt;nav&gt;</strong> element. <strong>&lt;nav&gt;</strong> is intended only for a major block of navigation links; typically the <strong>&lt;footer&gt;</strong> element often has a list of links that don't need to be in a <strong>&lt;nav&gt;</strong> element.
+        A document may have several <strong>&lt;nav&gt;</strong> elements, for example, one for site navigation and one for intra-page navigation. aria-labelledby can be used in such case to promote accessibility, see example.User agents, such as screen readers targeting disabled users, can use this element to determine whether to omit the initial rendering of navigation-only content.</p>
+    </hgroup>
+</nav>
+<hr>
+
+<section>
+    <hgroup>
+        <h3>Section tag</h3>
+        <h4>Usage Notes
+            
+            <p style="text-align: center;">Before</p>
+            <xmp>
+                <div>
+                    <h2>Heading</h2>
+                    <p>Bunch of awesome content</p>
+                  </div>
+            </xmp>
+            <p style="text-align: center;">After</p>
+            <xmp>
+                <section>
+                    <h2>Heading</h2>
+                    <p>Bunch of awesome content</p>
+                  </section>
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>As mentioned above, <strong>&lt;section&gt;</strong> is a generic sectioning element, and should only be used if there isn't a more specific element to represent it. As an example, a navigation menu should be wrapped in a <strong>&lt;nav&gt;</strong> element, but a list of search results or a map display and its controls don't have specific elements, and could be put inside a <strong>&lt;section&gt;</strong>.
+        <br> 
+        <br>   
+        <strong>Also consider these cases:</strong>
+        <br>
+        If the contents of the element represent a standalone, atomic unit of content that makes sense syndicated as a standalone piece (e.g. a blog post or blog comment, or a newspaper article), the <strong>&lt;article&gt;</strong> element would be a better choice.
+        If the contents represent useful tangential information that works alongside the main content, but is not directly part of it (like related links, or an author bio), use an <strong>&lt;aside&gt;</strong>.
+        If the contents represent the main content area of a document, use <strong>&lt;main&gt;</strong>.
+        If you are only using the element as a styling wrapper, use a <strong>&lt;div&gt;</strong> instead.
+        To reiterate, each <strong>&lt;section&gt;</strong> should be identified, typically by including a heading (h1 - h6 element) as a child of the <strong>&lt;section&gt;</strong> element, wherever possible. See below for examples of where you might see a <strong>&lt;section&gt;</strong> without a heading.</p>
+    </hgroup>
+</section>
+<hr>
+
+<search>
+    <hgroup>
+        <h3>Search tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Web app search</p>
+            <xmp>
+                <search>
+                    <label>
+                      Find and filter your query
+                      <input type="search" id="query" />
+                    </label>
+                    <label>
+                      <input type="checkbox" id="exact-only" />
+                      Exact matches only
+                    </label>
+                  
+                    <section>
+                      <h3>Results:</h3>
+                      <ul id="results">
+                        <!-- search result content -->
+                      </ul>
+                      <output id="no-results">
+                        <!-- no results content -->
+                      </output>
+                    </section>
+                  </search>
+            </xmp>
+            <p style="text-align: center;">Multiple searches</p>
+            <xmp>
+               
+                    <header>
+                      <h1>Car rental agency</h1>
+                      <search title="Website">...</search>
+                    </header>
+                    <main>
+                      <h2>Cars available for rent</h2>
+                      <search title="Cars">
+                        <h3>Filter results</h3>
+                        ...
+                      </search>
+                      <article>
+                        <!-- search result content -->
+                      </article>
+                    </main>
+                  </header>
+                  
+            </xmp>
+            <p style="text-align: center;">Header search form</p>
+            <xmp>
+                <header>
+                    <h1>Movie website</h1>
+                    <search>
+                      <form action="./search/">
+                        <label for="movie">Find a Movie</label>
+                        <input type="search" id="movie" name="q" />
+                        <button type="submit">Search</button>
+                      </form>
+                    </search>
+                  </header>
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>The <strong>&lt;search&gt;</strong> element is not for presenting search results. Rather, search or filtered results should be presented as part of the main content of that web page. That said, suggestions and links that are part of "quick search" functionality within the search or filtering functionality are appropriately nested within the contents of the <strong>&lt;search&gt;</strong> element as they are search features.</p>
+    </hgroup>
+
+</search> 
+<hr>
+
+<main>
+    <hgroup>
+        <h3>Main tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Reader mode</p>
+            <xmp>
+                <!-- other content -->
+
+                <main>
+                    <h1>Apples</h1>
+                    <p>The apple is the pomaceous fruit of the apple tree.</p>
+                
+                    <article>
+                    <h2>Red Delicious</h2>
+                    <p>
+                        These bright red apples are the most common 
+                        found in many supermarkets.
+                    </p>
+                    <p>…</p>
+                    <p>…</p>
+                    </article>
+                
+                    <article>
+                    <h2>Granny Smith</h2>
+                    <p>These juicy, green apples make a great filling 
+                        for apple pies.</p>
+                    <p>…</p>
+                    <p>…</p>
+                    </article>
+                </main>
+                
+                <!-- other content -->
+            </xmp>
+            <p style="text-align: center;">Skip navigation</p>
+            <xmp>
+                
+                    <a href="#main-content">Skip to main content</a>
+                  
+                    <!-- navigation and header content -->
+                  
+                    <main id="main-content">
+                      <!-- main page content -->
+                    </main>
+                 
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>The content of a <strong>&lt;main&gt;</strong> element should be unique to the document. Content that is repeated across a set of documents or document sections such as sidebars, navigation links, copyright information, site logos, and search forms shouldn't be included unless the search form is the main function of the page.
+
+            <strong>&lt;main&gt;</strong> doesn't contribute to the document's outline; that is, unlike elements such as <strong>&lt;body&gt;</strong>, headings such as h2, and such,<strong>&lt;main&gt;</strong> doesn't affect the DOM's concept of the structure of the page. It's strictly informative.</p>
+    </hgroup>
+</main>
+<hr>
+
+<aside>
+    <hgroup>
+        <h3>Aside tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Using &lt;aside&gt;</p>
+            <xmp>
+                <article>
+                    <p>
+                      The Disney movie <cite>The Little Mermaid</cite> 
+                      was first released to
+                      theatres in 1989.
+                    </p>
+                    <aside>
+                      <p>The movie earned $87 million during its initial release.</p>
+                    </aside>
+                    <p>More info about the movie…</p>
+                  </article>
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>Do not use the <strong>&lt;aside&gt;</strong> element to tag parenthesized text, as this kind of text is considered part of the main flow.</p>
+    </hgroup>
+</aside>
+<hr>
+
+<article>
+    <hgroup>
+        <h3>Article tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Examples</p>
+            <xmp>
+                <article class="film_review">
+                    <h2>Jurassic Park</h2>
+                    <section class="main_review">
+                      <h3>Review</h3>
+                      <p>Dinos were great!</p>
+                    </section>
+                    <section class="user_reviews">
+                      <h3>User reviews</h3>
+                      <article class="user_review">
+                        <h4>Too scary!</h4>
+                        <p>Way too scary for me.</p>
+                        <footer>
+                          <p>
+                            Posted on
+                            <time datetime="2015-05-16 19:00">May 16</time>
+                            by Lisa.
+                          </p>
+                        </footer>
+                      </article>
+                      <article class="user_review">
+                        <h4>Love the dinos!</h4>
+                        <p>I agree, dinos are my favorite.</p>
+                        <footer>
+                          <p>
+                            Posted on
+                            <time datetime="2015-05-17 19:00">May 17</time>
+                            by Tom.
+                          </p>
+                        </footer>
+                      </article>
+                    </section>
+                    <footer>
+                      <p>
+                        Posted on
+                        <time datetime="2015-05-15 19:00">May 15</time>
+                        by Staff.
+                      </p>
+                    </footer>
+                  </article>
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>Each <strong>&lt;article&gt;</strong> should be identified, typically by including a heading (<strong>&lt;h1&gt;</strong> to <strong>&lt;h6&gt;</strong> element) as a child of the <strong>&lt;article&gt;</strong> element.
+        When an <strong>&lt;article&gt;</strong> element is nested, the inner element represents an article related to the outer element. For example, the comments of a blog post can be <strong>&lt;article&gt;</strong> elements nested in the <strong>&lt;article&gt;</strong> representing the blog post.
+        Author information of an &lt;article&gt; element can be provided through the <strong>&lt;address&gt;</strong> element, but it doesn't apply to nested &lt;article&gt; elements.
+        The publication date and time of an <strong>&lt;article&gt;</strong> element can be described using the datetime attribute of a <strong>&lt;time&gt;</strong> element.</p>
+    </hgroup>
+</article>
+<hr>
+
+<main>
+    <hgroup>
+        <h3>Hgroup tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Examples</p>
+            <xmp>
+               
+                  <hgroup id="document-title">
+                    <h1>HTML: Living Standard</h1>
+                    <p>Last Updated 12 July 2022</p>
+                  </hgroup>
+                  <p>Some intro to the document.</p>
+                  <h2>Table of contents</h2>
+                  <ol id="toc">
+                    …
+                  </ol>
+                  <h2>First section</h2>
+                  <p>Some intro to the first section.</p>
+               
+                
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>The <strong>&lt;hgroup&gt;</strong> element allows the grouping of a heading with any secondary content, such as subheadings, an alternative title, or tagline. Each of these types of content represented as a <strong>&lt;p&gt;</strong> element within the <strong>&lt;hgroup&gt;</strong>.
+
+        The <strong>&lt;hgroup&gt;</strong> itself has no impact on the document outline of a web page. Rather, the single allowed heading within the <strong>&lt;hgroup&gt;</strong> contributes to the document outline.</p>
+    </hgroup>
+</main>
+<hr>
+
+<address>
+    <hgroup>
+        <h3>Address tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Exmaples</p>
+            <xmp>
+                <address>
+                    You can contact author at
+                    <a href="http://www.example.com/contact">www.example.com</a>.<br />
+                    If you see any bugs, please
+                    <a href="mailto:webmaster@example.com">contact webmaster</a>.<br />
+                    You may also want to visit us:<br />
+                    Mozilla Foundation<br />
+                    331 E Evelyn Ave<br />
+                    Mountain View, CA 94041<br />
+                    USA
+                  </address>
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>The <strong>&lt;address&gt;</strong> element can only be used to represent the contact information for its nearest <strong>&lt;article&gt;</strong> or <strong>&lt;body&gt;</strong> element ancestor.
+        This element should not contain more information than the contact information, like a publication date (which belongs in a <strong>&lt;time&gt;</strong> element).
+        Typically an <strong>&lt;address&gt;</strong> element can be placed inside the <strong>&lt;footer&gt;</strong> element of the current section, if any.</p>
+    </hgroup>
+  </address>
+  <hr>
+
+<footer>
+    <hgroup>
+        <h3>Footer tag</h3>
+        <h4>Usage Notes
+            <p style="text-align: center;">Examples</p>
+            <xmp>
+               
+                    <h3>FIFA World Cup top goalscorers</h3>
+                    <ol>
+                      <li>Miroslav Klose, 16</li>
+                      <li>Ronaldo Nazário, 15</li>
+                      <li>Gerd Müller, 14</li>
+                    </ol>
+                  
+                    <footer>
+                      <small>
+                        Copyright © 2023 Football History Archives.
+                        All Rights Reserved.
+                      </small>
+                    </footer>
+                  
+                  
+            </xmp>
+        </h4>
+        
+        <p><strong>Remark: </strong>Enclose information about the author in an <address> element that can be included into the <strong>&lt;footer&gt;</strong> element.
+        When the nearest ancestor sectioning content or sectioning root element is the body element the footer applies to the whole page.
+        The <strong>&lt;footer&gt;</strong> element is not sectioning content and therefore doesn't introduce a new section in the outline.</p>
+    </hgroup>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
